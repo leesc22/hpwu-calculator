@@ -38,7 +38,19 @@ var foes = [
   {name:"Dark Wizard", difficulty:"Imposing", stamina:88, power:11, proficiencyPower:0.15, deficiencyDefence:0.05, defence:0.15, defenceBreach:0.1, dodge:0},
   {name:"Dark Wizard", difficulty:"Elite Imposing", stamina:163, power:20, proficiencyPower:0.3, deficiencyDefence:0.2, defence:0.15, defenceBreach:0.2, dodge:0},
   {name:"Death Eater", difficulty:"Imposing", stamina:122, power:9, proficiencyPower:0.15, deficiencyDefence:0.05, defence:0, defenceBreach:0, dodge:0},
-  {name:"Death Eater", difficulty:"Elite Imposing", stamina:227, power:17, proficiencyPower:0.3, deficiencyDefence:0.2, defence:0, defenceBreach:0, dodge:0}]
+  {name:"Death Eater", difficulty:"Elite Imposing", stamina:227, power:17, proficiencyPower:0.3, deficiencyDefence:0.2, defence:0, defenceBreach:0, dodge:0},
+  {name:"Werewolf", difficulty:"Dangerous", stamina:133, power:13, proficiencyPower:0.2, deficiencyDefence:0.07, defence:0.4, defenceBreach:0.1, dodge:0},
+  {name:"Werewolf", difficulty:"Elite Dangerous", stamina:247, power:25, proficiencyPower:0.4, deficiencyDefence:0.15, defence:0.4, defenceBreach:0.1, dodge:0},
+  {name:"Pixie", difficulty:"Dangerous", stamina:67, power:14, proficiencyPower:0.2, deficiencyDefence:0.07, defence:0, defenceBreach:0, dodge:0.4},
+  {name:"Pixie", difficulty:"Elite Dangerous", stamina:126, power:27, proficiencyPower:0.4, deficiencyDefence:0.15, defence:0, defenceBreach:0, dodge:0.4},
+  {name:"Erkling", difficulty:"Dangerous", stamina:124, power:11, proficiencyPower:0.2, deficiencyDefence:0.07, defence:0, defenceBreach:0, dodge:0.4},
+  {name:"Erkling", difficulty:"Elite Dangerous", stamina:231, power:21, proficiencyPower:0.4, deficiencyDefence:0.15, defence:0, defenceBreach:0, dodge:0.4},
+  {name:"Acromantula", difficulty:"Dangerous", stamina:136, power:17, proficiencyPower:0.2, deficiencyDefence:0.07, defence:0, defenceBreach:0, dodge:0},
+  {name:"Acromantula", difficulty:"Elite Dangerous", stamina:254, power:32, proficiencyPower:0.4, deficiencyDefence:0.15, defence:0, defenceBreach:0, dodge:0},
+  {name:"Dark Wizard", difficulty:"Dangerous", stamina:101, power:12, proficiencyPower:0.2, deficiencyDefence:0.07, defence:0.3, defenceBreach:0.2, dodge:0},
+  {name:"Dark Wizard", difficulty:"Elite Dangerous", stamina:189, power:24, proficiencyPower:0.4, deficiencyDefence:0.15, defence:0.3, defenceBreach:0.2, dodge:0},
+  {name:"Death Eater", difficulty:"Dangerous", stamina:147, power:10, proficiencyPower:0.2, deficiencyDefence:0.07, defence:0, defenceBreach:0, dodge:0},
+  {name:"Death Eater", difficulty:"Elite Dangerous", stamina:273, power:19, proficiencyPower:0.4, deficiencyDefence:0.15, defence:0, defenceBreach:0, dodge:0}]
 
 var currentFoe = foes.find(function(e) {
   return e.name == "Werewolf" && e.difficulty.includes("Elite");
