@@ -81,10 +81,10 @@ function displayFoe() {
 
   document.getElementById("currentFoe").innerHTML = ("Level ").concat(selectedLevel.toString(), " ", currentFoe.difficulty, " ", currentFoe.name);
 
-  document.getElementById("foeStamina").innerHTML = currentFoe.stamina;
-  document.getElementById("foePower").innerHTML = currentFoe.power;
-  document.getElementById("foeProficiencyPower").innerHTML = currentFoe.proficiencyPower * 100 + "%";
-  document.getElementById("foeDeficiencyDefence").innerHTML = currentFoe.deficiencyDefence * 100 + "%";
+  document.getElementById("foeStamina").innerHTML = Math.round(currentFoe.stamina * (1 + 0.0816 * selectedLevel));
+  document.getElementById("foePower").innerHTML = Math.round(currentFoe.power * (1 + 0.0816 * selectedLevel));
+  document.getElementById("foeProficiencyPower").innerHTML = Math.round(currentFoe.proficiencyPower * (1 + 0.009999999776 * selectedLevel) * 100) + "%";
+  document.getElementById("foeDeficiencyDefence").innerHTML = Math.round(currentFoe.deficiencyDefence * (1 + 0.009999999776 * selectedLevel) * 100) + "%";
   document.getElementById("foeDefence").innerHTML = currentFoe.defence * 100 + "%";
   document.getElementById("foeDefenceBreach").innerHTML = currentFoe.defenceBreach * 100 + "%";
   document.getElementById("foeDodge").innerHTML = currentFoe.dodge * 100 + "%";
