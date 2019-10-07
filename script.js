@@ -55,7 +55,7 @@ var foes = [
   {name:"Werewolf", difficulty:"Elite Fierce", stamina:296, power:30, proficiencyPower:0.5, deficiencyDefence:0.25, defence:0.6, defenceBreach:0.3, dodge:0},
   {name:"Pixie", difficulty:"Fierce", stamina:75, power:18, proficiencyPower:0.25, deficiencyDefence:0.12, defence:0, defenceBreach:0, dodge:0.6},
   {name:"Pixie", difficulty:"Elite Fierce", stamina:140, power:43, proficiencyPower:0.5, deficiencyDefence:0.25, defence:0, defenceBreach:0, dodge:0.6},
-  {name:"Erkling", difficulty:"Fierce", stamina:139, power:13, proficiencyPower:0.25, deficiencyDefence:0.12, defence:0, defenceBreach:0, dodge:0.6,
+  {name:"Erkling", difficulty:"Fierce", stamina:139, power:13, proficiencyPower:0.25, deficiencyDefence:0.12, defence:0, defenceBreach:0, dodge:0.6},
   {name:"Erkling", difficulty:"Elite Fierce", stamina:258, power:24, proficiencyPower:0.5, deficiencyDefence:0.25, defence:0, defenceBreach:0, dodge:0.6},
   {name:"Acromantula", difficulty:"Fierce", stamina:166, power:22, proficiencyPower:0.25, deficiencyDefence:0.12, defence:0, defenceBreach:0, dodge:0},
   {name:"Acromantula", difficulty:"Elite Fierce", stamina:310, power:41, proficiencyPower:0.5, deficiencyDefence:0.25, defence:0, defenceBreach:0, dodge:0},
@@ -64,8 +64,28 @@ var foes = [
   {name:"Death Eater", difficulty:"Fierce", stamina:177, power:11, proficiencyPower:0.25, deficiencyDefence:0.12, defence:0, defenceBreach:0, dodge:0},
   {name:"Death Eater", difficulty:"Elite Fierce", stamina:328, power:22, proficiencyPower:0.5, deficiencyDefence:0.25, defence:0, defenceBreach:0, dodge:0}]
 
-var currentFoe = foes.find(function(e) {
-  return e.name == "Werewolf" && e.difficulty.includes("Elite");
-});
+displayFoe();
 
-document.getElementById("currentFoe").innerHTML = currentFoe.difficulty.concat(" ", currentFoe.name);
+function displayFoe() {
+  var foeOptions = document.getElementById("foes");
+  var selectedFoe = foeOptions.options[foeOptions.selectedIndex].value;
+
+  var difficultyOptions = document.getElementById("difficulties");
+  var selectedDifficulty = difficultyOptions.options[difficultyOptions.selectedIndex].value;
+
+  var selectedLevel = document.getElementById("level").value;
+
+  var currentFoe = foes.find(function(e) {
+    return e.name == selectedFoe && e.difficulty.includes(selectedDifficulty);
+  });
+
+  document.getElementById("currentFoe").innerHTML = ("Level ").concat(selectedLevel.toString(), " ", currentFoe.difficulty, " ", currentFoe.name);
+
+  document.getElementById("foeStamina").innerHTML = currentFoe.stamina;
+  document.getElementById("foePower").innerHTML = currentFoe.power;
+  document.getElementById("foeProficiencyPower").innerHTML = currentFoe.proficiencyPower * 100 + "%";
+  document.getElementById("foeDeficiencyDefence").innerHTML = currentFoe.deficiencyDefence * 100 + "%";
+  document.getElementById("foeDefence").innerHTML = currentFoe.defence * 100 + "%";
+  document.getElementById("foeDefenceBreach").innerHTML = currentFoe.defenceBreach * 100 + "%";
+  document.getElementById("foeDodge").innerHTML = currentFoe.dodge * 100 + "%";
+}

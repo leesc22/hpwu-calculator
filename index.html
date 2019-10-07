@@ -9,8 +9,62 @@
 
 </head>
 <body>
+  Level <input type="number" name="level" id="level" min="1" max="999" value="1" oninput="displayFoe()">
+
+  <select name="difficulties" id="difficulties" onchange="displayFoe()">
+    <option value="Common">Common</option>
+    <option value="Elite Common">Elite Common</option>
+    <option value="Formidable">Formidable</option>
+    <option value="Elite Formidable">Elite Formidable</option>
+    <option value="Imposing">Imposing</option>
+    <option value="Elite Imposing">Elite Imposing</option>
+    <option value="Dangerous">Dangerous</option>
+    <option value="Elite Dangerous">Elite Dangerous</option>
+    <option value="Fierce">Fierce</option>
+    <option value="Elite Fierce">Elite Fierce</option>
+  </select>
+  
+  <select name="foes" id="foes" onchange="displayFoe()">
+    <option value="Werewolf">Werewolf</option>
+    <option value="Pixie">Pixie</option>
+    <option value="Erkling">Erkling</option>
+    <option value="Acromantula">Acromantula</option>
+    <option value="Dark Wizard">Dark Wizard</option>
+    <option value="Death Eater">Death Eater</option>
+  </select>
+
 	<p id="currentFoe"></p>
 
+  <table>
+    <tr>
+      <th>Stamina</th>
+      <td id="foeStamina"></td>
+    </tr>
+    <tr>
+      <th>Power</th>
+      <td id="foePower"></td>
+    </tr>
+    <tr>
+      <th>Proficiency Power</th>
+      <td id="foeProficiencyPower"></td>
+    </tr>
+    <tr>
+      <th>Deficiency Defence</th>
+      <td id="foeDeficiencyDefence"></td>
+    </tr>
+    <tr>
+      <th>Defence</th>
+      <td id="foeDefence"></td>
+    </tr>
+    <tr>
+      <th>Defence Breach</th>
+      <td id="foeDefenceBreach"></td>
+    </tr>
+    <tr>
+      <th>Dodge</th>
+      <td id="foeDodge"></td>
+    </tr>
+  </table>
 
 	<script src="script.js"></script>
 </body>
